@@ -38,6 +38,9 @@ final class QuestionFactory: QuestionFactoryProtocol {
                 return
             }
             
+           // print("Загружен фильм: \(movie.title)")
+           // print("URL изображения: \(movie.imageURL)")
+            
             let rating = Float(movie.rating) ?? 0
             let comparisonType = Bool.random() ? "больше" : "меньше"
             let ratingValue = self.selectRatingValue()

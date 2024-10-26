@@ -19,6 +19,14 @@ final class MovieQuizViewController: UIViewController, MovieQuizViewControllerPr
         imageView.layer.cornerRadius = 20
         imageView.layer.masksToBounds = true
         
+        // Установка Accessibility Identifier для кнопок
+        yesButton.accessibilityIdentifier = "Yes"
+        noButton.accessibilityIdentifier = "No"
+        counterLabel.accessibilityIdentifier = "Index"
+
+        // Установка Accessibility Identifier для ImageView
+        imageView.accessibilityIdentifier = "Poster"
+        
         presenter = MovieQuizPresenter(viewController: self)
     }
     @IBAction private func noButtonClicked(_ sender: UIButton) {
@@ -33,6 +41,7 @@ final class MovieQuizViewController: UIViewController, MovieQuizViewControllerPr
         imageView.image = step.image
         textLabel.text = step.question
         counterLabel.text = step.questionNumber
+        
     }
     
     func highlightImageBorder(isCorrectAnswer: Bool) {
