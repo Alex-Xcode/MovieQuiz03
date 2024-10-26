@@ -1,9 +1,8 @@
-//
-//  QuestionFactoryDelegate.swift
-//  MovieQuiz
-//
 
 import Foundation
-protocol QuestionFactoryDelegate: AnyObject {               // 1
-    func didReceiveNextQuestion(question: QuizQuestion?)    // 2
+
+protocol QuestionFactoryDelegate: AnyObject {
+    func didReceiveNextQuestion(question: QuizQuestion?)
+    func didLoadDataFromServer()
+    func didFailToLoadData(with error: Error)
 }
